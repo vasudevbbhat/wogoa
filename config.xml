@@ -2,13 +2,13 @@
 <widget id="in.wogoa.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     
     <name>WoGoa App</name>
-    <description>WoGoa - Something is brewing</description>
+    <description>WoGoa - something is always brewing</description>
     <author email="vasu@itechnologixindia.com" href="http://www.itechnologixindia.com">iTechnologix Webmaster</author>
 
     <preference name="phonegap-version" value="3.3.0" />
     <feature name="http://api.phonegap.com/1.0/device" />
     
-    <preference name="orientation"                value="portrait" />       <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="orientation"                value="all" />       <!-- all: default means both landscape and portrait are enabled -->
     
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.camera" />
