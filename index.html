@@ -481,6 +481,35 @@ console.log(data);
 			
 			
 		 </script>
+         
+         <script language="javascript">
+
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#index')){
+        /* 
+         Event preventDefault/stopPropagation not required as adding backbutton
+          listener itself override the default behaviour. Refer below PhoneGap link.
+        */
+        //e.preventDefault();
+
+        navigator.notification.confirm(
+            "Do you want to exit the app?",
+            function (button) {
+              if (button==2) {
+                navigator.app.exitApp();
+              }
+            }
+            ,
+            "EXIT",
+            ["Cancel","OK"]
+        );
+    }
+    else {
+        navigator.app.backHistory()
+    }
+}, false);
+
+</script>
 		<script src="js/jquery.mobile-1.3.2.min.js"></script>
 		<script src="http://wogoa.in/api/article/get_article/?callback=ShowArticles"></script>
         <script src="http://wogoa.in/api/get_page/?id=463&callback=ShowMagazine"></script>
