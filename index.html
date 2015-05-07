@@ -1,10 +1,507 @@
-<!doctype html>
+<!-- Copyright Trevor D Miller 2013 -->
+
+<!DOCTYPE html>
 <html>
-  <head>
-   <title>tittle</title>
-   <script>
-     window.location='./main.html';
-   </script>
-  <body>
-  </body>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script>
+			// Turn off jQuery Mobile transitions for faster use
+			$(document).bind("mobileinit", function() {   
+					$.mobile.defaultPageTransition = 'none';
+			});
+			// Allow swiping to open menu panels
+			$( document ).on( "pageinit", ".ui-page", function() {
+			  var $page = $(this);
+			  $page.on( "swipeleft swiperight", function( e ) {
+			    if ( $page.jqmData( "panel" ) !== "open" ) {
+			      if ( e.type === "swipeleft"  ) {
+			        $page.find( ".right-panel" ).panel( "open" );
+			      } else if ( e.type === "swiperight" ) {
+			        $page.find( ".left-panel" ).panel( "open" );
+			      }
+			    }
+			  });
+			});
+		</script>
+		 
+	</head>
+	<body>
+
+		<!-- Home Page -->
+		<div data-role="page" id="home" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="home-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+			<!-- end of home -->
+            
+            <!-- About us Page -->
+		<div data-role="page" id="about" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="aboutus-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of About us -->
+        
+			<!-- Magazine Page -->
+		<div data-role="page" id="magazine" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="magazine-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of magazine -->
+        
+        <!-- goa-beyond Page -->
+		<div data-role="page" id="goa-beyond" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="goa-beyond-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of goa-beyond -->
+        
+        <!-- travel Page -->
+		<div data-role="page" id="travel" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="travel-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of travel -->
+        
+        
+         <!-- around goa Page -->
+		<div data-role="page" id="around-goa" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="aroundgoa-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of Around Goa -->
+        
+        
+        <!-- dining Page -->
+		<div data-role="page" id="dining" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="dining-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of Dining -->
+        
+        
+        <!-- where to stay Page -->
+		<div data-role="page" id="where-to-stay" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="stay-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of where to stay -->
+        
+        
+        <!-- nightlife Page -->
+		<div data-role="page" id="nightlife" data-theme="a">
+			<div data-role="panel" data-display="overlay" id="menu-panel" class="right-panel" data-position="right">
+            <a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+				<a href="index.html" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Home</a>
+                <a href="#magazine" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Magazine</a>
+                <a href="#goa-beyond" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Goa & Beyond</a>
+                <a href="#travel" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Travel</a>
+                <a href="#where-to-stay" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Where To Stay</a>
+                <a href="#dining" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Dining</a>
+                <a href="#nightlife" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Nightlife</a>
+                <a href="#around-goa" class="btn-primary" data-role="button" id="About"  data-icon="tag" >Around Goa</a>
+                <a href="#about" class="btn-primary" data-role="button" id="About"  data-icon="tag" >About Wo`Goa</a>
+				<!--a href="#search" class="btn-primary" data-role="button" id="SearchButton" data-icon="search" >Search </a-->
+				
+				<a href="#menu-panel" data-role="button" class="close" data-icon="remove">Close menu</a>
+			</div>
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				<a href="#menu-panel" class="menu"><span class="ui-icon-reorder"></span></a>
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="nightlife-content">
+			 
+					 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    
+				</div>
+			</div>
+		</div>
+        <!-- end of nightlife -->
+	</body>
+    <script type="text/javascript">
+		 	function ShowArticles(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div><div class="img">' + val['image'] + '</div>' + val['content'];
+					if(val['issuulink']!='') 
+					output += '.. <a target="_blank" href=" '+ val['issuulink'] +'">Read More</a>';
+					output += '</div></div>';	
+				});
+			 
+				$('#home-content').append(output);
+				
+			}
+			
+			//show magazine page
+			function ShowMagazine(data){
+
+				var output = '';
+				 
+			//	$.each(data['page'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ data['page']['title'] +'</div>' + data['page']['content'];
+					
+					output += '</div>';	
+				//});
+			 
+				$('#magazine-content').append(output);
+			}
+			
+			//show about us page
+			function ShowAboutUs(data){
+console.log(data);
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div><div class="img">' + val['image'] + '</div>' + val['content'];
+					output += '</div></div>';	
+				});
+			 
+				$('#aboutus-content').append(output);
+			}
+			
+			//show goa-beyond page
+			function ShowGoaBeyond(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div><div class="img">' + val['image'] + '</div>' + val['content'];
+					if(val['issuulink']!='') 
+					output += '.. <a target="_blank" href=" '+ val['issuulink'] +'">Read More</a>';
+					output += '</div></div>';	
+				});
+			 
+				$('#goa-beyond-content').append(output);
+				
+			}
+			
+			//show travel page
+			function ShowTravel(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div><div class="img">' + val['image'] + '</div>' + val['content'];
+					if(val['issuulink']!='') 
+					output += '.. <a target="_blank" href=" '+ val['issuulink'] +'">Read More</a>';
+					output += '</div></div>';	
+				});
+			 
+				$('#travel-content').append(output);
+				
+			}
+			
+			//show Arnound Goa page
+			function ShowAroundGoa(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div>' + val['content'];
+					if(val['issuulink']!='') 
+					output += '.. <a target="_blank" href=" '+ val['issuulink'] +'">Read More</a>';
+					output += '</div></div>';	
+				});
+			 
+				$('#aroundgoa-content').append(output);
+				
+			}
+			
+			
+			//show Dining page
+			function ShowDining(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div><div class="img">' + val['image'] + '</div>' + val['content'];
+					output += '</div></div>';	
+				});
+			 
+				$('#dining-content').append(output);
+				
+			}
+			
+			//show where to stay page
+			function ShowStay(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div><div class="img">' + val['image'] + '</div>' + val['content'];
+					output += '</div></div>';	
+				});
+			 
+				$('#stay-content').append(output);
+				
+			}
+			
+			//show nightlife page
+			function ShowNightLife(data){
+				
+				var output = '';
+				$.each(data['article'], function (k,val){
+					
+					output += '<div class="para-block"><div class="ui-title">'+ val['title'] +'</div>';
+					if(val['image']!='')
+					output += '<div class="img">' + val['image'] + '</div>'
+					output += val['content'];
+					output += '</div></div>';	
+				});
+			 
+				$('#nightlife-content').append(output);
+				
+			}
+			
+			
+		 </script>
+		<script src="js/jquery.mobile-1.3.2.min.js"></script>
+		<script src="http://wogoa.in/api/article/get_article/?callback=ShowArticles"></script>
+        <script src="http://wogoa.in/api/get_page/?id=463&callback=ShowMagazine"></script>
+        <script src="http://wogoa.in/api/article/get_home_article/?callback=ShowAboutUs"></script>
+        <script src="http://wogoa.in/api/article/get_goa_beyond_article/?callback=ShowGoaBeyond"></script>
+        <script src="http://wogoa.in/api/article/get_travel_article/?callback=ShowTravel"></script>
+        <script src="http://wogoa.in/api/article/get_aroundgoa_article/?callback=ShowAroundGoa"></script>
+        
+        <script src="http://wogoa.in/api/article/get_dining_posts/?callback=ShowDining"></script>
+        <script src="http://wogoa.in/api/article/get_stay_posts/?callback=ShowStay"></script>
+        <script src="http://wogoa.in/api/article/get_nightlife_posts/?callback=ShowNightLife"></script>
+        
+		<script type="text/javascript" src="phonegap.js"> </script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="js/plugins/SocialSharing.js"></script>
 </html>
