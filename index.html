@@ -360,6 +360,12 @@
           
 	</body>
     <script type="text/javascript">
+		function onDeviceReady() {
+			navigator.splashscreen.hide();
+		}
+		
+		document.addEventListener("deviceready", onDeviceReady, false);
+
 			$( document ).ready(function() {
 				 if (window.localStorage.length != 0){
 					 var values = window.localStorage.getItem('wogoa');
@@ -375,7 +381,7 @@
 				data.push($("#email").val());
 				data.push($("#country").val());
 				window.localStorage.setItem("wogoa", data.join(',')); 
-				 $("#home-block").html("<div class='welcome'>Thank you for registering <br><b> Dear " + values[0] +" </b><br><a href='#magazine' ' data-transition='flip'>Proceed</a></div>");
+				 $("#home-block").html("<div class='welcome'>Thank you for registering <br><b> Dear " + $("#name").val() +" </b><br><a href='#magazine' ' data-transition='flip'>Proceed</a></div>");
 			});
 			function scrollToAnchor(aid){
 				$('html, body').animate({
