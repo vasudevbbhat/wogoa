@@ -39,7 +39,7 @@
     <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 	<preference name="SplashScreen" value="screen" />
-	<preference name="SplashScreenDelay" value="20000" />
+	<preference name="SplashScreenDelay" value="10000" />
 
     <!--
         Define a specific version of PhoneGap to build into your app.
@@ -111,12 +111,7 @@
 	<gap:splash src="res/screen/android/drawable-xxxhdpi/xxxhdpi-landscape.png"       gap:platform="android" gap:qualifier="land-xxxhdpi" />
 	
     <!--gap:splash src="res/screen/blackberry/screen-225.png"              gap:platform="blackberry" /-->
-    <gap:splash src="res/screen/ios/Default.png"         gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/Default@2x.png"      gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="res/screen/ios/Default-568h@2x.png" gap:platform="ios"     width="640" height="1136" />
-    <gap:splash src="res/screen/ios/Default-Portrait.png"           gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="res/screen/ios/Default-Landscape.png"          gap:platform="ios"     width="1024" height="768" />
-	
+ 
 	<gap:splash src="res/screen/ios/Default.png" gap:platform="ios"  width="320" height="480"/>
     <gap:splash src="res/screen/ios/Default@2x.png" gap:platform="ios"  width="640" height="960"/>
     <gap:splash src="res/screen/ios/Default-Portrait.png" gap:platform="ios"  width="768" height="1024"/>
@@ -163,6 +158,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 	
-	 <content src="http://m.wogoa.in" />
-    <access origin="*" subdomains="true" />
+	 <content src="index.html" />
+    <!--<access origin="*" subdomains="true" />-->
 </widget>
