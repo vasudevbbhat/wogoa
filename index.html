@@ -418,7 +418,7 @@
 			$( "#save" ).click(function() {
 				var data = new Array();
 				if($("#name").val()=='' || $("#email").val()=='' || $("#country").val()==0){
-					navigator.notification.prompt("Please Fill all the details", doNothing	);
+					navigator.notification.alert("Please Fill all the details", doNothing	);
 					return false;
 				}
 				data.push($("#name").val());
@@ -544,7 +544,7 @@
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-latest-mobile&callback=ShowMagazine"></script>
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-archive-mobile&callback=ShowMagazineArchived"></script>
          <script src="http://wogoa.in/api/get_category_posts/?slug=mobile-ads&callback=ShowMobileAds"></script>
-		<!--<script type="text/javascript" src="phonegap.js"> </script>
+		<script type="text/javascript" src="phonegap.js"> </script>
 		<script type="text/javascript" src="cordova.js"></script>
-		<script src="js/plugins/SocialSharing.js"></script>-->
+		
 </html>
