@@ -418,7 +418,7 @@
 			$( "#save" ).click(function() {
 				var data = new Array();
 				if($("#name").val()=='' || $("#email").val()=='' || $("#country").val()==0){
-					navigator.notification.alert("Please Fill all the details", doNothing	);
+					navigator.notification.prompt("Please Fill all the details", doNothing	);
 					return false;
 				}
 				data.push($("#name").val());
