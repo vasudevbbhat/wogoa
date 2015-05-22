@@ -418,7 +418,7 @@
 			$( "#save" ).click(function() {
 				var data = new Array();
 				if($("#name").val()=='' || $("#email").val()=='' || $("#country").val()==0){
-					alert("Please Fill all the details"	);
+					navigator.notification.alert("Please Fill all the details", doNothing	);
 					return false;
 				}
 				data.push($("#name").val());
@@ -432,7 +432,9 @@
                         scrollBottom: $("#magazine").offset().bottom
                     }, 1000);
 			}
-
+			function doNothing(){
+				//nothing here	
+			}
 
 			//show latest magazine
 			function ShowMagazine(data){
