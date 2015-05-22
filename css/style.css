@@ -4744,7 +4744,7 @@ html, body {
 	padding-bottom:20px;
 }
 .welcome a:link{
-	border:1px solid #A68828;
+	border:0px solid #A68828;
 	text-decoration:none;
 	border-radius:10px;	
 	padding-left:20px;
@@ -4752,8 +4752,11 @@ html, body {
 	background-color:#A68828;
 	color:#fff;
 }
+.welcome a:visited{
+	color:#fff !important;
+}
 .welcome a:hover{
-	border:1px solid #A68828;
+	border:o0px solid #A68828;
 	text-decoration:none;
 	border-radius:10px;	
 	padding-left:20px;

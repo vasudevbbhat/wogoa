@@ -42,6 +42,7 @@
                         <div data-role="fieldcontain">
                             <label for="name">Your Country:</label>
                              <select name="country" id="country">
+                             <option value="" title="">-- Country --</option>
                                 <option value="Afghanistan" title="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands" title="Åland Islands">Åland Islands</option>
                                 <option value="Albania" title="Albania">Albania</option>
@@ -300,27 +301,9 @@
                         </form>
 						</div>	 
 					<div class="clear"></div>
-				</div>
-				<div class="custom-footer">
-					<!-- footer -->
-                    <img src="img/facebook.png" border="0"><img src="img/twitter.png" border="0">
-				</div>
-			</div>
-		</div>
-			<!-- end of home -->
-            
-            
-            <!-- magazine Page -->
-		<div data-role="page" id="magazine" data-theme="a"  data-transition="flip">
-       
-			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
-				 
-				<div class="logo"><img src="img/logo.png"></div>
-			</div>
-			<div data-role="content">
-				<div class="quote" id="magazine-content">
-                    <!-- Slider main container -->
-                    <div class="swiper-container">
+                    <!-- advertisement slider -->
+                     <!-- Slider main container -->
+                    <div class="swiper-container advert">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
@@ -331,17 +314,96 @@
                         <div class="swiper-pagination"></div>
                         
                     </div>
+                    <!-- end of adver slider -->
+                    
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                    <a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE"><img src="img/twitter.png" border="0"></a>
+				</div>
+			</div>
+		</div>
+			<!-- end of home -->
+            
+            
+            <!-- magazine Page -->
+		<div data-role="page" id="magazine" data-theme="a" >
+       
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				 
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="magazine-content">
+                    <!-- Slider main container -->
+                    <div class="swiper-container s1">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            
+                           
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                        
+                    </div>
+                    <br><br>
+                    
+                    <div data-role="fieldcontain">
+                            <div class="welcome">
+                                <a href="#archive"  data-transition="flip">View Magazine Archive</a>
+                            </div>
+                        </div>
 						</div>	 
 					<div class="clear"></div>
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                    <img src="img/facebook.png" border="0"><img src="img/twitter.png" border="0">
+                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410" target="_blank"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE" target="_blank"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
-		</div>
-			<!-- end of home -->
+		 
+			<!-- end of magazine -->
           
+          
+           <!-- magazine archive Page -->
+		<div data-role="page" id="archive" data-theme="a"  data-transition="flip">
+       
+			<div data-role="header"  class="custom-header" data-tap-toggle="false" data-id="header" >
+				 
+				<div class="logo"><img src="img/logo.png"></div>
+			</div>
+			<div data-role="content">
+				<div class="quote" id="archive-content">
+                    <!-- Slider main container -->
+                    <div class="swiper-container s2">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            
+                           
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination-archive"></div>
+                        
+                    </div>
+                    
+                    <br><br>
+                     <div class="welcome">
+                                <a href="#magazine"  data-transition="flip">View Latest Magazine</a>
+                            </div>
+						</div>	 
+					<div class="clear"></div>
+				</div>
+				<div class="custom-footer">
+					<!-- footer -->
+                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410" target="_blank"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE" target="_blank"><img src="img/twitter.png" border="0"></a>
+				</div>
+			</div>
+	 
+			<!-- end of magazine archive -->
+            
+            
 	</body>
     <script type="text/javascript">
 			$( document ).ready(function() {
@@ -355,6 +417,10 @@
   
 			$( "#save" ).click(function() {
 				var data = new Array();
+				if($("#name").val()=='' || $("#email").val()=='' || $("#country").val()==0){
+					alert("Please Fill all the details"	);
+					return false;
+				}
 				data.push($("#name").val());
 				data.push($("#email").val());
 				data.push($("#country").val());
@@ -368,62 +434,80 @@
 			}
 
 
-			//show Arnound Goa page
+			//show latest magazine
 			function ShowMagazine(data){
 				
 				var output = '';
-				output +=  strip_tags(data['page']['content'],"<a><img>") ;
-				output = output.split("</a>");
-				value='';
-			 	for(i=0;i<output.length;i++){
-					if(output[i].length>20)
-					value =	'<div class="swiper-slide">' + output[i] + '</a></div>';
-					mySwiper.appendSlide(value);
-				}
-	
-				$('.swiper-wrapper').append(value);
+				
+				$.each(data['posts'], function (k,val){
+				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+					mySwiper.appendSlide(output);
+				});
+				
+				//$('.swiper-wrapper').append(value);
 				
 			}
 			
-			var mySwiper = new Swiper('.swiper-container', {
+			var mySwiper = new Swiper('.s1', {
 				speed: 400,
 				spaceBetween: 100,
 				direction: 'horizontal',
 				pagination: '.swiper-pagination'
-			});   
+			});  
+			//end of latest magazine
 			
-			function strip_tags(input, allowed) {
-			  //   example 1: strip_tags('<p>Kevin</p> <br /><b>van</b> <i>Zonneveld</i>', '<i><b>');
-			  //   returns 1: 'Kevin <b>van</b> <i>Zonneveld</i>'
-			  //   example 2: strip_tags('<p>Kevin <img src="someimage.png" onmouseover="someFunction()">van <i>Zonneveld</i></p>', '<p>');
-			  //   returns 2: '<p>Kevin van Zonneveld</p>'
-			  //   example 3: strip_tags("<a href='http://kevin.vanzonneveld.net'>Kevin van Zonneveld</a>", "<a>");
-			  //   returns 3: "<a href='http://kevin.vanzonneveld.net'>Kevin van Zonneveld</a>"
-			  //   example 4: strip_tags('1 < 5 5 > 1');
-			  //   returns 4: '1 < 5 5 > 1'
-			  //   example 5: strip_tags('1 <br/> 1');
-			  //   returns 5: '1  1'
-			  //   example 6: strip_tags('1 <br/> 1', '<br>');
-			  //   returns 6: '1 <br/> 1'
-			  //   example 7: strip_tags('1 <br/> 1', '<br><br/>');
-			  //   returns 7: '1 <br/> 1'
-			
-			  allowed = (((allowed || '') + '')
-				.toLowerCase()
-				.match(/<[a-z][a-z0-9]*>/g) || [])
-				.join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
-			  var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
-				commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
-			  return input.replace(commentsAndPhpTags, '')
-				.replace(tags, function($0, $1) {
-				  return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+			//show archived magazines
+			function ShowMagazineArchived(data){
+				
+				var output = '';
+				
+				$.each(data['posts'], function (k,val){
+				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+			 
+					myArcSwiper.appendSlide(output);
 				});
+				
+				//$('.swiper-wrapper').append(value);
+				
 			}
+			
+			var myArcSwiper = new Swiper('.s2', {
+				speed: 400,
+				spaceBetween: 100,
+				direction: 'horizontal',
+				pagination: '.swiper-pagination-archive'
+			});  
+			 //end of archived magazines
+			 
+			 //mobile advertisements
+			function ShowMobileAds(data){
+				
+				var output = '';
+				
+				$.each(data['posts'], function (k,val){
+				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+					advert.appendSlide(output);
+				});
+				
+				//$('.swiper-wrapper').append(value);
+				
+			}
+			
+			var advert = new Swiper('.advert', {
+				speed: 400,
+				spaceBetween: 100,
+				direction: 'horizontal',
+				pagination: '.swiper-pagination',
+				autoplay:3000
+			});  
+			//end of mobile adverts
+			
 		 </script>
+         
          
          <script language="javascript">
 
-document.addEventListener("backbutton", function(e){
+		document.addEventListener("backbutton", function(e){
     if($.mobile.activePage.is('#index')){
         /* 
          Event preventDefault/stopPropagation not required as adding backbutton
@@ -448,14 +532,16 @@ document.addEventListener("backbutton", function(e){
 			}
 		}, false);
 
-</script>
+		</script>
 		
         
         
 
 		<script src="js/jquery.mobile-1.3.2.min.js"></script>
 		
-        <script src="http://wogoa.in/api/get_page/?id=463&callback=ShowMagazine"></script>
+        <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-latest-mobile&callback=ShowMagazine"></script>
+        <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-archive-mobile&callback=ShowMagazineArchived"></script>
+         <script src="http://wogoa.in/api/get_category_posts/?slug=mobile-ads&callback=ShowMobileAds"></script>
 		<!--<script type="text/javascript" src="phonegap.js"> </script>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script src="js/plugins/SocialSharing.js"></script>-->
