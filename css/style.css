@@ -4773,3 +4773,13 @@ html, body {
     height: 100%;
 	text-align:center;
 }  
+.policy:link{
+	text-decoration:none;
+	color:#A68828;
+	text-align:right;
+	width:100%;
+}
+.policy:hover{
+	text-decoration:none;
+	color:#A68828;
+}
