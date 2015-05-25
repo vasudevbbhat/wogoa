@@ -427,14 +427,19 @@
 				data.push($("#name").val());
 				data.push($("#email").val());
 				data.push($("#country").val());
+				var postData = $('#form-element').serialize();
+
 				//save in remote server
 				$.ajax({
-				   type: "POST",
-			  	 	url: "http://wogoa.in/process.php",
-			   		data: { name: $("#name").val(), email : $("#email").val(),  country: $("#country").val(), fromapp : "yup" }
-				}).done(function( msg ) {
-			 alert( "Data was saved: " + msg );
+					type: 'POST',
+					data: postData,
+					url: 'http://wogoa.in/mob_process.php',
+					success: function(data){
+						//console.log(data);
+						//alert('Your comment was successfully added');
+					}
 				});
+				
 				window.localStorage.setItem("wogoa", data.join(',')); 
 				 $("#home-block").html("<div class='welcome'>Thank you for registering <br><b> Dear " + $("#name").val() +" </b><br><a href='#magazine' ' data-transition='flip'>Proceed</a></div>");
 			});
