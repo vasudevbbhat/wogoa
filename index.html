@@ -315,7 +315,7 @@
 
                         </form>
                          <div data-role="fieldcontain">
-                        <a class="policy" href="http://issuu.com/wogoa/docs/privacy_policy_statement/1?e=0" target="_blank">Privacy Policy</a>
+                        <a class="policy" href="issuu://issuu.com/wogoa/docs/privacy_policy_statement/1?e=0" target="_blank">Privacy Policy</a>
                         </div>
 						</div>	 
 					<div class="clear"></div>
@@ -337,7 +337,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                    <a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE"><img src="img/twitter.png" border="0"></a>
+                    <a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="twitter://user?screen_name=WOGOAMAGAZINE"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 		</div>
@@ -377,7 +377,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410" target="_blank"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE" target="_blank"><img src="img/twitter.png" border="0"></a>
+                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="twitter://user?screen_name=WOGOAMAGAZINE"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 		 
@@ -415,7 +415,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410" target="_blank"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE" target="_blank"><img src="img/twitter.png" border="0"></a>
+                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="twitter://user?screen_name=WOGOAMAGAZINE"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 	 
@@ -476,7 +476,7 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] +  '" ><img src="' + val['thumbnail'] + '" border=0></a></div>';	
 					mySwiper.appendSlide(output);
 				});
 				
