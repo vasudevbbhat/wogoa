@@ -57,9 +57,9 @@
 <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
 <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
-<gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
+<!--<gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
 <gap:plugin name="com.simplec.plugins.localnotification" />
-
+-->
 	<gap:splash src="splash.png" />
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
@@ -151,6 +151,5 @@
     </platform>
 	
 	 <content src="http://m.wogoa.in" />
-     <access origin="http://m.wogoa.in" browserOnly="true" />
-	 
+    <access origin="*" subdomains="true" browserOnly="true" />
 </widget>
