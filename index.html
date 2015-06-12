@@ -337,7 +337,8 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                    <a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="#"  onClick="window.open('twitter://user?screen_name=WOGOAMAGAZINE', '_system')"><img src="img/twitter.png" border="0"></a>
+                    <a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="#"  onClick="window.plugins.childBrowser.showWebPage('twitter://user?screen_name=WOGOAMAGAZINE',
+                                        { showLocationBar: true });"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 		</div>
@@ -580,5 +581,6 @@
          <script src="http://wogoa.in/api/get_category_posts/?slug=mobile-ads&callback=ShowMobileAds"></script>
 		<script src="phonegap.js"></script>
 		<script src="cordova.js"></script>
+        <script src="childbrowser.js"></script>
 		
 </html>
