@@ -150,7 +150,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 	
-	 <content src="index.html" />
+	 <content src="http://m.wogoa.in" />
      <access origin="http://m.wogoa.in" browserOnly="true" />
 	 
 </widget>
