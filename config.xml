@@ -151,5 +151,6 @@
     </platform>
 	
 	 <content src="index.html" />
-    <access origin="*" subdomains="true" browserOnly="true" />
+     <access origin="http://m.wogoa.in" browserOnly="true" />
+	 
 </widget>
