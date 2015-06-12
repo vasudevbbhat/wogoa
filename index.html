@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="js/swiper/css/swiper.min.css">
         <script src="js/swiper/js/swiper.min.js"></script>
         <script src="js/swiper/js/swiper.jquery.min.js"></script>
+        
+        <script src="phonegap.js"></script>
+		<script src="cordova.js"></script>
+		<script src="childbrowser.js"></script>
 	
 <script >
 //paste this code under head tag or in a seperate js file.
@@ -237,6 +241,7 @@
                                 <option value="Poland" title="Poland">Poland</option>
                                 <option value="Portugal" title="Portugal">Portugal</option>
                                 <option value="Puerto Rico" title="Puerto Rico">Puerto Rico</option>
+
                                 <option value="Qatar" title="Qatar">Qatar</option>
                                 <option value="Réunion" title="Réunion">Réunion</option>
                                 <option value="Romania" title="Romania">Romania</option>
@@ -337,8 +342,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                    <a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="#"  onClick="window.plugins.childBrowser.showWebPage('twitter://user?screen_name=WOGOAMAGAZINE',
-                                        { showLocationBar: true });"><img src="img/twitter.png" border="0"></a>
+                    <a href="#" onClick="window.plugins.childBrowser.showWebPage('https://www.facebook.com/pages/WOGOA-Magazine/430510810418410')"><img src="img/facebook.png" border="0"></a><a href="#" onClick="window.plugins.childBrowser.showWebPage('https://twitter.com/WOGOAMAGAZINE')"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 		</div>
@@ -378,7 +382,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="#"  onClick="window.open('twitter://user?screen_name=WOGOAMAGAZINE', '_system')"><img src="img/twitter.png" border="0"></a>
+                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410" target="_blank"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE" target="_blank"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 		 
@@ -416,7 +420,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="fb://page/430510810418410"><img src="img/facebook.png" border="0"></a><a href="#"  onClick="window.open('twitter://user?screen_name=WOGOAMAGAZINE', '_system')"><img src="img/twitter.png" border="0"></a>
+                     <a href="#home" data-transition="flip"><img src="img/home.png" border="0"></a><a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410" target="_blank"><img src="img/facebook.png" border="0"></a><a href="https://twitter.com/WOGOAMAGAZINE" target="_blank"><img src="img/twitter.png" border="0"></a>
 				</div>
 			</div>
 	 
@@ -477,7 +481,7 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] +  '" ><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
 					mySwiper.appendSlide(output);
 				});
 				
@@ -579,8 +583,6 @@
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-latest-mobile&callback=ShowMagazine"></script>
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-archive-mobile&callback=ShowMagazineArchived"></script>
          <script src="http://wogoa.in/api/get_category_posts/?slug=mobile-ads&callback=ShowMobileAds"></script>
-		<script src="phonegap.js"></script>
-		<script src="cordova.js"></script>
-        <script src="childbrowser.js"></script>
+		
 		
 </html>
