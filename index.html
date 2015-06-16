@@ -432,9 +432,11 @@
 			$( document ).ready(function() {
 				 if (window.localStorage.length != 0){
 					 var values = window.localStorage.getItem('wogoa');
+					if(values!=null){
 					 values = values.split(",");
 					 
 					 $("#home-block").html("<div class='welcome'>Welcome back <br><b>" + values[0] +"</b><br><a href='#magazine' data-transition='flip'>Proceed</a></div>");
+					}
 					 
 				 }
 			  });
