@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<title>WO`GOA</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 		<link rel="stylesheet" href="css/style.min.css" />
 		<script src="js/jquery-1.10.2.min.js"></script>
+
         <script src="js/modernizr.js"></script>
         <link rel="stylesheet" href="js/swiper/css/swiper.min.css">
         <script src="js/swiper/js/swiper.min.js"></script>
         <script src="js/swiper/js/swiper.jquery.min.js"></script>
         
-        <script src="phonegap.js"></script>
-		<script src="cordova.js"></script>
-		<script src="childbrowser.js"></script>
 	
 <script >
 //paste this code under head tag or in a seperate js file.
@@ -241,7 +241,6 @@
                                 <option value="Poland" title="Poland">Poland</option>
                                 <option value="Portugal" title="Portugal">Portugal</option>
                                 <option value="Puerto Rico" title="Puerto Rico">Puerto Rico</option>
-
                                 <option value="Qatar" title="Qatar">Qatar</option>
                                 <option value="Réunion" title="Réunion">Réunion</option>
                                 <option value="Romania" title="Romania">Romania</option>
@@ -320,7 +319,7 @@
 
                         </form>
                          <div data-role="fieldcontain">
-                        <a class="policy" href="http://issuu.com/wogoa/docs/privacy_policy_statement/1?e=0" target="_blank">Privacy Policy</a>
+                        <a class="policy external"  data-rel="dialog" href="main.php?url=http://issuu.com/wogoa/docs/privacy_policy_statement/1?e=0" target="_blank" >Privacy Policy</a>
                         </div>
 						</div>	 
 					<div class="clear"></div>
@@ -342,7 +341,8 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                    <a href="#" onClick="window.plugins.childBrowser.showWebPage('https://www.facebook.com/pages/WOGOA-Magazine/430510810418410')"><img src="img/facebook.png" border="0"></a><a href="#" onClick="window.plugins.childBrowser.showWebPage('https://twitter.com/WOGOAMAGAZINE')"><img src="img/twitter.png" border="0"></a>
+                    <a href="https://www.facebook.com/pages/WOGOA-Magazine/430510810418410"><img src="img/facebook.png" border="0"></a><!--<a href="https://twitter.com/WOGOAMAGAZINE">--><img id="openTwitter" src="img/twitter.png" border="0"><!--</a>-->
+                   
 				</div>
 			</div>
 		</div>
@@ -481,7 +481,7 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				output = '<div class="swiper-slide"><a href="main.php?url=' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
 					mySwiper.appendSlide(output);
 				});
 				
@@ -503,7 +503,7 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				output = '<div class="swiper-slide"><a href="main.php?url=' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
 			 
 					myArcSwiper.appendSlide(output);
 				});
@@ -526,7 +526,7 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				output = '<div class="swiper-slide"><a href="main.php?url=' + val['custom_fields']['issuelink'] + '" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
 					advert.appendSlide(output);
 				});
 				
@@ -573,16 +573,22 @@
 			}
 		}, false);
 
-		</script>
+
+	 	</script>
 		
         
         
 
-		<script src="js/jquery.mobile-1.3.2.min.js"></script>
-		
+	<script src="js/jquery.mobile-1.3.2.min.js"></script>
+        <script src="phonegap.js"></script>
+	<script src="cordova.js"></script>
+	<script src="childbrowser.js"></script>
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-latest-mobile&callback=ShowMagazine"></script>
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-archive-mobile&callback=ShowMagazineArchived"></script>
          <script src="http://wogoa.in/api/get_category_posts/?slug=mobile-ads&callback=ShowMobileAds"></script>
-		
+         <script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript">
+            app.initialize();
+        </script>
 		
 </html>
