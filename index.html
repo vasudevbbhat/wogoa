@@ -16,49 +16,13 @@
         <script src="js/jquery.mobile-1.3.2.min.js"></script>
         <script src="phonegap.js" charset="utf-8" ></script>
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        <script type="text/javascript" charset="utf-8">
-
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // Global InAppBrowser reference
-    var iabRef = null;
-
-    function iabLoadStart(event) {
-        //alert(event.type + ' - ' + event.url);
-    }
-
-    function iabLoadStop(event) {
-       // alert(event.type + ' - ' + event.url);
-    }
-
-    function iabClose(event) {
-       // alert(event.type);
-         iabRef.removeEventListener('loadstart', iabLoadStart);
-         iabRef.removeEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('exit', iabClose);
-    }
-
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        // alert('Device is ready!');
-         //iabRef = window.open('http://apache.org', '_blank', 'location=yes');
-         //iabRef.addEventListener('loadstart', iabLoadStart);
-         //iabRef.addEventListener('loadstop', iabLoadStop);
-         //iabRef.addEventListener('exit', iabClose);
-    }
-
-    </script>
-	
-<script >
-//paste this code under head tag or in a seperate js file.
-	// Wait for window load
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");
-	});
+        <script >
+		//paste this code under head tag or in a seperate js file.
+		// Wait for window load
+		$(window).load(function() {
+			// Animate loader off screen
+			$(".se-pre-con").fadeOut("slow");
+		});
     
 	</script>
          <style>
@@ -378,7 +342,7 @@
 				</div>
 				<div class="custom-footer">
 					<!-- footer -->
-                   <a href="#" onclick="window.open('https://www.facebook.com/pages/WOGOA-Magazine/430510810418410','_system','location=yes')"><img src="img/facebook.png" border="0"></a><a  onclick="window.open('https://twitter.com/WOGOAMAGAZINE','_system','location=yes')" href="#"><img id="openTwitter" src="img/twitter.png" border="0"></a>
+                   <a href="#" onclick="cordova.InAppBrowser.open('https://www.facebook.com/pages/WOGOA-Magazine/430510810418410','_system','location=yes')"><img src="img/facebook.png" border="0"></a><a  onclick="cordova.InAppBrowser.open('https://twitter.com/WOGOAMAGAZINE','_system','location=yes')" href="#"><img id="openTwitter" src="img/twitter.png" border="0"></a>
                    
 				</div>
 			</div>
@@ -466,6 +430,7 @@
             
 	</body>
     <script type="text/javascript">
+	
 			$( document ).ready(function() {
 				 if (window.localStorage.length != 0){
 					 var values = window.localStorage.getItem('wogoa');
@@ -588,7 +553,7 @@
          <script language="javascript">
 
 		document.addEventListener("backbutton", function(e){
-    if($.mobile.activePage.is('#index')){
+    if($.mobile.activePage.is('#main')){
         /* 
          Event preventDefault/stopPropagation not required as adding backbutton
           listener itself override the default behaviour. Refer below PhoneGap link.
@@ -622,9 +587,15 @@
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-latest-mobile&callback=ShowMagazine"></script>
         <script src="http://wogoa.in/api/get_category_posts/?slug=magazine-archive-mobile&callback=ShowMagazineArchived"></script>
          <script src="http://wogoa.in/api/get_category_posts/?slug=mobile-ads&callback=ShowMobileAds"></script>
-         <script type="text/javascript" src="js/functions.js"></script>
+         <!--<script type="text/javascript" src="js/functions.js"></script>
 		<script type="text/javascript">
             app.initialize();
-        </script>
-		
+        </script>-->
+		<script type="application/javascript">
+		document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		alert("window.open works well");
+	}
+
+		</script>
 </html>
