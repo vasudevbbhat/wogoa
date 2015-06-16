@@ -16,18 +16,18 @@
   <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
   <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
   <gap:plugin name="org.apache.cordova.inappbrowser"  version="0.2.3" />
-  <!--<gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />-->
-  <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />
+  <!--<gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
+  <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />-->
   <!--<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />-->
   <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
-  <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
+  <!--<gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />-->
   <!--<gap:plugin name="com.simplec.plugins.localnotification" />
 <gap:plugin name="com.phonegap.plugins.childbrowser"  version="5.0.0" />-->
   
   <!-- Third party plugins -->
   <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
-  <gap:plugin name="com.ohh2ahh.plugins.appavailability" version="0.3.1" />
+  <!--<gap:plugin name="com.ohh2ahh.plugins.appavailability" version="0.3.1" />-->
   <gap:splash src="splash.png" />
     
 	
