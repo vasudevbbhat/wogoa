@@ -153,6 +153,6 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
   </platform>
-  <content src="http://m.wogoa.in" />
+  <!--<content src="http://m.wogoa.in" />-->
   <access origin="*" subdomains="true" browserOnly="true" />
 </widget>
