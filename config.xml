@@ -52,7 +52,7 @@
         Define a specific version of PhoneGap to build into your app.
         <preference name="phonegap-version"       value="3.5.0" />
     -->
- 	 <preference name="phonegap-version" value="3.0.0" />
+ 	 <preference name="phonegap-version" value="3.7.0" />
   <!-- Plugins -->
   
   <!-- Core plugins -->
@@ -155,6 +155,7 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
   </platform>
-  <content src="http://test.wogoa.in" />
-  <access origin="*" subdomains="true" />
+  <!--<content src="http://test.wogoa.in" />-->
+ <!-- <access origin="*" subdomains="true" />-->
+ <access origin="*" />
 </widget>
