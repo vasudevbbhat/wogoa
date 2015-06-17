@@ -54,12 +54,13 @@
     -->
  	 <preference name="phonegap-version" value="3.7.0" />
   <!-- Plugins -->
-  
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
   <!-- Core plugins -->
   <gap:plugin name="org.apache.cordova.console" version="0.2.11" />
   <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
-  <!--<gap:plugin name="org.apache.cordova.inappbrowser"  version="0.2.3" />
-  <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />-->
+  <gap:plugin name="org.apache.cordova.inappbrowser"  version="0.2.3" />
+  <!--<gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />-->
   <gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />
   <!--<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />-->
@@ -139,7 +140,7 @@
   
   <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
   <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
-  <plugin name="cordova-plugin-whitelist" version="1" />
+  <!--<plugin name="cordova-plugin-whitelist" version="1" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
   <allow-intent href="tel:*" />
@@ -154,7 +155,7 @@
   <platform name="ios">
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
-  </platform>
+  </platform>-->
   <!--<content src="http://test.wogoa.in" />-->
  <!-- <access origin="*" subdomains="true" />-->
  <access origin="*" />
