@@ -346,7 +346,7 @@
              </div>
     <div class="custom-footer"> 
                <!-- footer --> 
-               <a href="#" onclick="window.open('https://www.facebook.com/pages/WOGOA-Magazine/430510810418410','_system','location=yes')"><img src="img/facebook.png" border="0"></a><a  onclick="window.open('https://twitter.com/WOGOAMAGAZINE','_system','location=yes')" href="#"><img id="openTwitter" src="img/twitter.png" border="0"></a> </div>
+              <a href="#" data-transition="flip"><img src="img/home.png" border="0"></a> <a href="#" onclick="window.open('https://www.facebook.com/pages/WOGOA-Magazine/430510810418410','_system','location=yes')"><img src="img/facebook.png" border="0"></a><a  onclick="window.open('https://twitter.com/WOGOAMAGAZINE','_system','location=yes')" href="#"><img src="img/twitter.png" border="0"></a> </div>
   </div>
          </div>
 <!-- end of home --> 
@@ -523,7 +523,7 @@
 		 <script language="javascript">
 
 		document.addEventListener("backbutton", function(e){
-    if($.mobile.activePage.is('#main')){
+    if($.mobile.activePage.attr('id') == 'main'){
         /* 
          Event preventDefault/stopPropagation not required as adding backbutton
           listener itself override the default behaviour. Refer below PhoneGap link.
