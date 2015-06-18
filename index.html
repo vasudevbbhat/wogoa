@@ -327,7 +327,7 @@
             <input type="button" value="Save & Proceed >>>"  name="save" id="save">
           </div>
                  </form>
-        <div data-role="fieldcontain"> <a class="policy external"  data-rel="dialog" href="#" onClick="window.open('http://issuu.com/wogoa/docs/privacy_policy_statement/1?e=0','_system','location=yes')" target="_blank" >Privacy Policy</a> </div>
+        <div data-role="fieldcontain"> <a class="policy external"  data-rel="dialog" href="#" onClick="main.php?url=http://issuu.com/wogoa/docs/privacy_policy_statement/1?e=0" target="_blank" >Privacy Policy</a> </div>
       </div>
                <div class="clear"></div>
                <!-- advertisement slider --> 
@@ -457,7 +457,8 @@
 				
 				var output = '';
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="#" onClick="window.open(\'' + val['custom_fields']['issuelink'] + '\',\'_system\',\'location=yes\')" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				//output = '<div class="swiper-slide"><a href="#" onClick="window.open(\'' + val['custom_fields']['issuelink'] + '\',\'_system\',\'location=yes\')" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';
+					output = '<div class="swiper-slide"><a href="main.php?url=' + val['custom_fields']['issuelink'] + '"><img src="' + val['thumbnail'] + '" border=0></a></div>';
 					mySwiper.appendSlide(output);
 				});
 				
@@ -479,8 +480,8 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="#" onClick="window.open(\'' + val['custom_fields']['issuelink'] + '\',\'_system\',\'location=yes\')" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
-			 
+				//output = '<div class="swiper-slide"><a href="#" onClick="window.open(\'' + val['custom_fields']['issuelink'] + '\',\'_system\',\'location=yes\')" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+			 output = '<div class="swiper-slide"><a href="main.php?url=' + val['custom_fields']['issuelink'] + '"><img src="' + val['thumbnail'] + '" border=0></a></div>';
 					myArcSwiper.appendSlide(output);
 				});
 				
@@ -502,7 +503,8 @@
 				var output = '';
 				
 				$.each(data['posts'], function (k,val){
-				output = '<div class="swiper-slide"><a href="#" onClick="window.open(\'' + val['custom_fields']['issuelink'] + '\',\'_system\',\'location=yes\')" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				//output = '<div class="swiper-slide"><a href="#" onClick="window.open(\'' + val['custom_fields']['issuelink'] + '\',\'_system\',\'location=yes\')" target="_blank"><img src="' + val['thumbnail'] + '" border=0></a></div>';	
+				output = '<div class="swiper-slide"><a href="main.php?url=' + val['custom_fields']['issuelink'] + '"><img src="' + val['thumbnail'] + '" border=0></a></div>';
 					advert.appendSlide(output);
 				});
 				
