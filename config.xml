@@ -156,7 +156,7 @@
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
   </platform>-->
-  <content src="http://test.wogoa.in" />
+ <!-- <content src="http://test.wogoa.in" />-->
  <!-- <access origin="*" subdomains="true" />-->
  <access origin="*" />
 </widget>
